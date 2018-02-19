@@ -9,11 +9,11 @@ public class _2048 {
     Board board = new Board();
 
     board.start();
-
+    board.draw();
     while (!board.over()) {
-      board.draw();
       c = reader.next().charAt(0);
       board.move(c);
+      board.draw();
     }
   }
 

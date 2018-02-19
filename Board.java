@@ -50,12 +50,14 @@ public class Board {
   public void spawn() {
     boolean spawn = false;
     int i, j;
-    while (!spawn) {
-      i = (int)(Math.random() * 4);
-      j = (int)(Math.random() * 4);
-      if (board[i][j] == 0) {
-        board[i][j] = Math.random() < 0.9 ? 2 : 4;
-        spawn = true;
+    if (!full()) {
+      while (!spawn) {
+        i = (int)(Math.random() * 4);
+        j = (int)(Math.random() * 4);
+        if (board[i][j] == 0) {
+          board[i][j] = Math.random() < 0.9 ? 2 : 4;
+          spawn = true;
+        }
       }
     }
   }
@@ -153,5 +155,17 @@ public class Board {
       }
     }
     return over;
+  }
+
+  public boolean full() {
+    boolean full = true;
+    for (int i = 0; i < 4; i++) {
+      for (int j = 0; j < 4; j++) {
+        if (board[i][j] == 0) {
+          full = false;
+        }
+      }
+    }
+    return full;
   }
 }
