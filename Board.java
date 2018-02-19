@@ -40,13 +40,20 @@ public class Board {
   }
 
   public void start() {
-    int k = 0;
-    while (k < 2) {
-      int i = (int)(Math.random() * 4);
-      int j = (int)(Math.random() * 4);
+    for (int i = 0; i < 2; i++) {
+      spawn();
+    }
+  }
+
+  public void spawn() {
+    boolean spawn = false;
+    int i, j;
+    while (!spawn) {
+      i = (int)(Math.random() * 4);
+      j = (int)(Math.random() * 4);
       if (board[i][j] == 0) {
-        board[i][j] = 2;
-        k++;
+        board[i][j] = Math.random() < 0.9 ? 2 : 4;
+        spawn = true;
       }
     }
   }
