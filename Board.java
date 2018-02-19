@@ -132,4 +132,26 @@ public class Board {
       spawn();
     }
   }
+
+  public boolean over() {
+    boolean over = true;
+    for (int i = 0; i < 4; i++) {
+      for (int j = 0; j < 4; j++) {
+        if (board[i][j] == 0) {
+          over = false;
+        }
+        if (j != 3) {
+          if (board[i][j] == board [i][j+1]) {
+            over = false;
+          }
+        }
+        if (i != 3) {
+          if (board[i][j] == board [i+1][j]) {
+            over = false;
+          }
+        }
+      }
+    }
+    return over;
+  }
 }
