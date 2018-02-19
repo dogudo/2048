@@ -5,7 +5,8 @@ public class _2048 {
                      {2048,4,32,256},
                      {512,1024,8,64},
                      {16,128,2018,2}};
-    Board board = new Board(test);
+    Board board = new Board();
+    board.start();
     board.draw();
   }
 

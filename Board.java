@@ -39,4 +39,16 @@ public class Board {
     }
   }
 
+  public void start() {
+    int k = 0;
+    while (k < 2) {
+      int i = (int)(Math.random() * 4);
+      int j = (int)(Math.random() * 4);
+      if (board[i][j] == 0) {
+        board[i][j] = 2;
+        k++;
+      }
+    }
+  }
+
 }
