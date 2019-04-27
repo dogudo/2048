@@ -64,7 +64,7 @@ public class Board {
 
   public void move(char c) {
     int aux;
-    if (c == 'u') {
+    if (c == 'w') {
       for (int i = 1; i < 4; i++) {
         for (int j = 0; j < 4; j++) {
           aux = i;
@@ -81,7 +81,7 @@ public class Board {
         }
       }
       spawn();
-    } else if (c == 'd') {
+    } else if (c == 's') {
       for (int i = 2; i > -1; i--) {
         for (int j = 0; j < 4; j++) {
           aux = i;
@@ -98,7 +98,7 @@ public class Board {
         }
       }
       spawn();
-    } else if (c == 'l') {
+    } else if (c == 'a') {
       for (int j = 1; j < 4; j++){
         for (int i = 0; i < 4; i++) {
           aux = j;
@@ -115,7 +115,7 @@ public class Board {
         }
       }
       spawn();
-    } else if (c == 'r') {
+    } else if (c == 'd') {
       for (int j = 2; j > -1; j--) {
         for (int i = 0; i < 4; i++) {
           aux = j;
